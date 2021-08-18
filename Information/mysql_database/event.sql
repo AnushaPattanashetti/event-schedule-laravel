@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2021 at 10:42 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 7.4.19
+-- Generation Time: Aug 18, 2021 at 12:25 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.3.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,23 +67,6 @@ CREATE TABLE `events` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `events`
---
-
-INSERT INTO `events` (`id`, `cliendId`, `name`, `description`, `startdate`, `starttime`, `endtime`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Sharat', 'j', '2021-06-12', '20:02', '20:02', '2021-06-12 09:14:39', '2021-06-12 09:14:39'),
-(2, 1, 'Sharat', 'j', '2021-06-12', '20:02', '20:02', '2021-06-12 09:15:30', '2021-06-12 09:15:30'),
-(3, 2, 'anushi', 'anu', '2021-06-10', '20:16', '20:20', '2021-06-12 09:16:10', '2021-06-12 09:16:10'),
-(6, 2, 'anushi', 'aa', '2021-06-12', '20:35', '20:44', '2021-06-12 09:43:25', '2021-06-12 09:43:25'),
-(7, 2, 'sha', 'rat', '2021-06-12', '20:48', '20:55', '2021-06-12 09:48:51', '2021-06-12 09:48:51'),
-(8, 2, 'sha', 'rat', '2021-06-12', '20:48', '20:55', '2021-06-12 09:50:39', '2021-06-12 09:50:39'),
-(9, 2, 'sha', 'rat', '2021-06-12', '20:48', '20:55', '2021-06-12 09:51:53', '2021-06-12 09:51:53'),
-(10, 2, 'Abc', 'def', '2021-06-19', '22:29', '22:29', '2021-06-12 11:29:43', '2021-06-12 11:29:43'),
-(11, 2, 'Abc', 'def', '2021-06-19', '22:29', '22:29', '2021-06-12 11:29:55', '2021-06-12 11:29:55'),
-(12, 1, 'New Meet', 'Rookie meet', '2021-06-12', '10:00', '12:00', '2021-06-12 12:40:02', '2021-06-12 12:40:02'),
-(13, 1, 'New Meeting', 'New Joinee', '2021-06-13', '01:39', '02:30', '2021-06-12 14:39:29', '2021-06-12 14:39:29');
 
 -- --------------------------------------------------------
 
@@ -156,25 +139,6 @@ CREATE TABLE `schedules` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `schedules`
---
-
-INSERT INTO `schedules` (`id`, `cliendId`, `name`, `description`, `startdate`, `starttime`, `endtime`, `created_at`, `updated_at`) VALUES
-(1, 1, 'New Meeting', 'New Joinee', '2021-06-13', '01:39', '02:30', NULL, NULL),
-(2, 1, 'New Meeting', 'New Joinee', '2021-06-20', '01:39', '02:30', NULL, NULL),
-(3, 1, 'New Meeting', 'New Joinee', '2021-06-27', '01:39', '02:30', NULL, NULL),
-(4, 1, 'New Meeting', 'New Joinee', '2021-07-04', '01:39', '02:30', NULL, NULL),
-(5, 1, 'New Meeting', 'New Joinee', '2021-07-11', '01:39', '02:30', NULL, NULL),
-(6, 1, 'New Meeting', 'New Joinee', '2021-07-18', '01:39', '02:30', NULL, NULL),
-(7, 1, 'New Meeting', 'New Joinee', '2021-07-25', '01:39', '02:30', NULL, NULL),
-(8, 1, 'New Meeting', 'New Joinee', '2021-08-01', '01:39', '02:30', NULL, NULL),
-(9, 1, 'New Meeting', 'New Joinee', '2021-08-08', '01:39', '02:30', NULL, NULL),
-(10, 1, 'New Meeting', 'New Joinee', '2021-08-15', '01:39', '02:30', NULL, NULL),
-(11, 1, 'New Meeting', 'New Joinee', '2021-08-22', '01:39', '02:30', NULL, NULL),
-(12, 1, 'New Meeting', 'New Joinee', '2021-08-29', '01:39', '02:30', NULL, NULL),
-(13, 1, 'New Meeting', 'New Joinee', '2021-09-05', '01:39', '02:30', NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -205,14 +169,6 @@ CREATE TABLE `signups` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `signups`
---
-
-INSERT INTO `signups` (`id`, `firstname`, `lastname`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'Sharat', 'Janageri', 'joaod@123', 'Xcvbn*&87top.', '2021-06-11 04:51:56', '2021-06-11 04:51:56'),
-(2, 'Anu', 'Pa', 'anu@gm.co', 'Anushi', '2021-06-12 01:00:46', '2021-06-12 01:00:46');
 
 -- --------------------------------------------------------
 
@@ -292,7 +248,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -310,13 +266,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `schedules`
 --
 ALTER TABLE `schedules`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `signups`
 --
 ALTER TABLE `signups`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
